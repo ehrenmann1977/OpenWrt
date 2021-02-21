@@ -66,7 +66,7 @@ I will use LAN4 for a rescue function with custom router ip of 10.10.10.10, so t
 		click on Add VLAN to a add a new VLAN zone
 		Set LAN 4 to be untaged in VLAN ID 3 and off in VLAN ID 1
 		Set CPU eth0 to be taged in VLAN ID 3
-	Click on Save and Apply
+		Click on Save and Apply
 
 	In Network-> Interface 
 	----------------------
