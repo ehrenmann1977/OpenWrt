@@ -142,13 +142,14 @@ Now i will configure LAN1 port to be used as Internet source connected to a seco
 	
 	Click on Create Interface: This will open Interfaces >> WAN2 window
 	
-	General Settings:
-		HostName: InternetPort
-	Physical Settings:
-		Bridge interfaces: not yet
-		Interface: eth0.4
-	Firewall Settings:
-		Zone: Wan
+		General Settings:
+			HostName: InternetPort
+			Protocol: DHCP Setting
+		Physical Settings:
+			Bridge interfaces: yes			 
+			Interface: eth0.4 and search for radio0.network1
+		Firewall Settings:
+			Zone: Wan
 	
 	Save and apply, disconnect the network on LAN1 and Connect LAN1 port to the internet
 	
