@@ -61,38 +61,38 @@ http://downloads.openwrt.org/releases/19.07.7/targets/lantiq/xrx200/openwrt-19.0
 
 I will use LAN4 for a rescue function with custom router ip of 10.10.10.10, so that if i lose connection to the router, i can setup a static ip of my pc to 10.10.10.15 and connect to the router but it should give you a dynamic ip in this range.
 
-- In Network-> Switch click on Add VLAN to a add a new VLAN zone
-
-- Set LAN 4 to be untaged in VLAN ID 3 and off in VLAN ID 1
-- Set CPU eth0 to be taged in VLAN ID 3
+-	In Network-> Switch 
+		click on Add VLAN to a add a new VLAN zone
+		Set LAN 4 to be untaged in VLAN ID 3 and off in VLAN ID 1
+		Set CPU eth0 to be taged in VLAN ID 3
 
 - Click on Save and Apply
 
-- In Network-> Interface click on Add new interface
-	New Interface name: Rescue
-	Protocol: Static address
-	Interface: in custom search for eth0.3
-	Click Save, and this will open a next configuration window for Resuce Interface
+- In Network-> Interface 
+		click on Add new interface
+		New Interface name: Rescue
+		Protocol: Static address
+		Interface: in custom search for eth0.3
+		Click Save, and this will open a next configuration window for Resuce Interface
 	
 	General Settings:
-	--------------------
-	
-	IPv4 address: 10.10.10.10
-	IPv4 netmask: 255.255.255.0
-	Ipv6 assignment length: 60
+	--------------------	
+		IPv4 address: 10.10.10.10
+		IPv4 netmask: 255.255.255.0
+		Ipv6 assignment length: 60
 	
 	Advanced Settings:
 	------------------
-	Use buildin IPv6-management: yes
-	Force link: yes
+		Use buildin IPv6-management: yes
+		Force link: yes
 	
 	Physical Settings:
 	------------------
-	Check Interface is set to eth0.3
+		Check Interface is set to eth0.3
 	
 	Firewall Settings:
 	------------------
-	Firewall zone: select Lan
+		Firewall zone: select Lan
 	
 	DHCP Server
 	-----------
@@ -125,31 +125,31 @@ Also i can connect to the router under 192.168.1.1
 Now i will configure LAN1 port to be used as Internet source connected to a second router.
 
 - In Network-> Switch 
-	Create a new VLAN using Add VLAN, this will add VLAN Id 4
-	Set CPU(eth0) in VLAN ID 4 to taged
-	Set LAN1 in VLAN ID1 to off (Remove LAN1 from VLAN ID1)
-	Set LAN1 in VLAN ID4 to untaged
-	Save and apply
+		Create a new VLAN using Add VLAN, this will add VLAN Id 4
+		Set CPU(eth0) in VLAN ID 4 to taged
+		Set LAN1 in VLAN ID1 to off (Remove LAN1 from VLAN ID1)
+		Set LAN1 in VLAN ID4 to untaged
+		Save and apply
 	
 
 - In the Network->Interfaces
 	Click on add a new interface, this will open an interface window
 	
-	Name: WAN2
-	Protocol: DHCP client
-	Bridge: unchecked
-	Interface: eth0.4
-	
-	Click on Create Interface: This will open Interfaces >> WAN2 window
-	
-		General Settings:
-			HostName: InternetPort
-			Protocol: DHCP Setting
-		Physical Settings:
-			Bridge interfaces: yes			 
-			Interface: eth0.4 and search for radio0.network1
-		Firewall Settings:
-			Zone: Wan
+		Name: WAN2
+		Protocol: DHCP client
+		Bridge: unchecked
+		Interface: eth0.4
+		
+		Click on Create Interface: This will open Interfaces >> WAN2 window
+		
+			General Settings:
+				HostName: InternetPort
+				Protocol: DHCP Setting
+			Physical Settings:
+				Bridge interfaces: yes			 
+				Interface: eth0.4 and search for radio0.network1
+			Firewall Settings:
+				Zone: Wan
 	
 	Save and apply, disconnect the network on LAN1 and Connect LAN1 port to the internet
 	
