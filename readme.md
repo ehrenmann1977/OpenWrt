@@ -9,6 +9,7 @@ Here i will be working on the project openwrt in which, i will change the router
 
 - [Flashing](#Flashing)
 - [Resuce Port](#Create-a-Resuce-Port)
+- [Connect Internet with LAN1](#Connect-Internet-with-LAN-1)
 
 <!-- tocstop -->
 
@@ -36,12 +37,14 @@ http://downloads.openwrt.org/releases/19.07.7/targets/lantiq/xrx200/openwrt-19.0
 http://192.168.1.1/undoc_upgrade.stm
 
 2- Step 2: Use complete available Flash area
+Up till now not all the available flash area is available, because some is used by old configurations. We will use it in this section.
 
 - download the OpenWrt Upgrade Image, this is the NOR Image
 http://downloads.openwrt.org/releases/19.07.7/targets/lantiq/xrx200/openwrt-19.07.7-lantiq-xrx200-arcadyan_vgv7510kw22-nor-squashfs-sysupgrade.bin
 
 - Open http://192.168.1.1 and in the LUA OpenWrt page, goto Flash firmware under 
    System -> Backup / Flash Firmware
+   http://192.168.1.1/cgi-bin/luci/admin/system/flash
 
 - Select the NOR image and click ok
 
@@ -55,3 +58,72 @@ http://downloads.openwrt.org/releases/19.07.7/targets/lantiq/xrx200/openwrt-19.0
 
 
 ## Create a Resuce Port
+
+I will use LAN4 for a rescue function with custom router ip of 10.10.10.10, so that if i lose connection to the router, i can setup a static ip of my pc to 10.10.10.15 and connect to the router but it should give you a dynamic ip in this range.
+
+- In Network-> Switch click on Add VLAN to a add a new VLAN zone
+
+- Set LAN 4 to be untaged in VLAN ID 3 and off in VLAN ID 1
+- Set CPU eth0 to be taged in VLAN ID 3
+
+- Click on Save and Apply
+
+- In Network-> Interface click on Add new interface
+	New Interface name: Rescue
+	Protocol: Static address
+	Interface: in custom search for eth0.3
+	Click Save, and this will open a next configuration window for Resuce Interface
+	
+	General Settings:
+	--------------------
+	
+	IPv4 address: 10.10.10.10
+	IPv4 netmask: 255.255.255.0
+	Ipv6 assignment length: 60
+	
+	Advanced Settings:
+	------------------
+	Use buildin IPv6-management: yes
+	Force link: yes
+	
+	Physical Settings:
+	------------------
+	Check Interface is set to eth0.3
+	
+	Firewall Settings:
+	------------------
+	Firewall zone: select Lan
+	
+	DHCP Server
+	-----------
+	click on Setup DHCP Server
+		
+		General Setup:
+		--------------
+		Start: 100
+		Limit: 150
+		Lease time: 12h
+		
+		Advanced Settings:
+		------------------
+		Dynamic DHCP: yes
+		
+		IPv6 Settings:
+	    --------------
+	    Router Advertisment-Service: server mode
+	    DHCPv6-Service: server mode
+	    NDP-Proxy: disabled
+	    DHCPv6-Mode: statesss+stateful 
+	    
+	    Save and Apply
+
+Now when i connect to port 4, i get ip 10.10.10.133 and can ping 10.10.10.10 sucessfully
+
+
+## Connect Internet with LAN 1
+
+
+
+
+	    
+	
