@@ -60,15 +60,16 @@ http://downloads.openwrt.org/releases/19.07.7/targets/lantiq/xrx200/openwrt-19.0
 ## Create a Resuce Port
 
 I will use LAN4 for a rescue function with custom router ip of 10.10.10.10, so that if i lose connection to the router, i can setup a static ip of my pc to 10.10.10.15 and connect to the router but it should give you a dynamic ip in this range.
-
--	In Network-> Switch 
+	
+	In Network-> Switch 
+	-------------------
 		click on Add VLAN to a add a new VLAN zone
 		Set LAN 4 to be untaged in VLAN ID 3 and off in VLAN ID 1
 		Set CPU eth0 to be taged in VLAN ID 3
+	Click on Save and Apply
 
-- Click on Save and Apply
-
-- In Network-> Interface 
+	In Network-> Interface 
+	----------------------
 		click on Add new interface
 		New Interface name: Rescue
 		Protocol: Static address
