@@ -9,7 +9,7 @@ Here i will be working on the project openwrt in which, i will change the router
 
 - [Flashing](#Flashing)
 - [Resuce Port](#Create-a-Resuce-Port)
-- [Connect Internet with LAN1](#Connect-Internet-with-LAN-1)
+- [Connect Internet with LAN1](#Connect-Internet-through-LAN-1)
 
 <!-- tocstop -->
 
@@ -122,7 +122,7 @@ Now when i connect to port 4, i get ip 10.10.10.133 and can ping 10.10.10.10 suc
 Also i can connect to the router under 192.168.1.1
 
 
-## Connect Internet with LAN 1
+## Connect Internet through LAN 1
 Now i will configure LAN1 port to be used as Internet source connected to a second router.
 
 - In Network-> Switch 
