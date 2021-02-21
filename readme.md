@@ -118,10 +118,47 @@ I will use LAN4 for a rescue function with custom router ip of 10.10.10.10, so t
 	    Save and Apply
 
 Now when i connect to port 4, i get ip 10.10.10.133 and can ping 10.10.10.10 sucessfully
+Also i can connect to the router under 192.168.1.1
 
 
 ## Connect Internet with LAN 1
+Now i will configure LAN1 port to be used as Internet source connected to a second router.
 
+- In Network-> Switch 
+	Create a new VLAN using Add VLAN, this will add VLAN Id 4
+	Set CPU(eth0) in VLAN ID 4 to taged
+	Set LAN1 in VLAN ID1 to off (Remove LAN1 from VLAN ID1)
+	Set LAN1 in VLAN ID4 to untaged
+	Save and apply
+	
+
+- In the Network->Interfaces
+	Click on add a new interface, this will open an interface window
+	
+	Name: WAN2
+	Protocol: DHCP client
+	Bridge: unchecked
+	Interface: eth0.4
+	
+	Click on Create Interface: This will open Interfaces >> WAN2 window
+	
+	General Settings:
+		HostName: InternetPort
+	Physical Settings:
+		Bridge interfaces: not yet
+		Interface: eth0.4
+	Firewall Settings:
+		Zone: Wan
+	
+	Save and apply, disconnect the network on LAN1 and Connect LAN1 port to the internet
+	
+	now you will have an internet connection over LAN1
+
+
+
+	
+	
+	
 
 
 
