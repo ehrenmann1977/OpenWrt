@@ -3,7 +3,7 @@
 ## Introduction
 Here i will be working on the project openwrt in which, i will change the router original firmware to OpenWrt, i will show the steps needed without using serial connection, just only using the network cable. The router has a DSL port, and 4 Network ports, i will configure the router to use LAN1 to connect to Internet through another router, in addition to creating a rescue configuration using LAN4, that will be connected to a VPN server for telephony and gaming purposes. For a full telephony experience, we will install asterisk and configure to use the telephony port.
 
-
+## Table Of Contents
 <!-- toc -->
 
 - [Flashing] (#Flashing)
