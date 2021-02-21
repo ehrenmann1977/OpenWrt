@@ -152,7 +152,7 @@ Now i will configure LAN1 port to be used as Internet source connected to a seco
 			Firewall Settings:
 				Zone: Wan
 	
-	Save and apply, disconnect the network on LAN1 and Connect LAN1 port to the internet
+		Save and apply, disconnect the network on LAN1 and Connect LAN1 port to the internet
 	
 	now you will have an internet connection over LAN1
 
