@@ -9,7 +9,7 @@ Here i will be working on the project openwrt in which, i will change the router
 
 - [Flashing](#Flashing)
 - [Resuce Port](#Create-a-Resuce-Port)
-- [Connect Internet with LAN1](#Connect-Internet-through-LAN-1)
+- [Connect Internet through LAN1](#Connect-Internet-through-LAN-1)
 
 <!-- tocstop -->
 
