@@ -65,7 +65,7 @@ Add Bridge Interface
  * Protocol of the new interface: `Relay bridge`
  * Click `Submit`
  * Relay between networks: `lan:` and `wwan:`
- * Local IPv4 Address: Example `192.168.178.1`
+ * Local IPv4 Address: Example `192.168.178.1` and in some cases main routers use ips like `192.168.0.1`
  * Click 'Save and Apply'
 
 
@@ -74,8 +74,8 @@ Update LAN Interface
 
  * Menu -> Network -> Interfaces
  * LAN -> Click `Edit`
- * IPv4 Gateway: Example `192.168.178.1`
- * Custom DNS: Example `192.168.178.1`
+ * IPv4 Gateway: Example for fritzbox `192.168.178.1` or for other routers `192.168.0.1`
+ * Custom DNS: Example for fritzbox `192.168.178.1` or for other routers `192.168.0.1`
  * DHCP: Ignore Interface [X]
 
 
